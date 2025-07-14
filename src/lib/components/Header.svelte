@@ -38,7 +38,7 @@
 
 <svelte:window onclick={closeMenu} />
 
-<header class="sticky top-0 z-50 border-b border-orange-200/50 bg-white/80 backdrop-blur-sm">
+<header class="sticky top-0 z-50 border-b">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">
