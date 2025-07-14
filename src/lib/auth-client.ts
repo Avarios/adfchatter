@@ -1,5 +1,20 @@
 import { createAuthClient } from 'better-auth/svelte';
-const { accountInfo, signIn, signOut, signUp, useSession } = createAuthClient();
-const googleLogin = signIn.social({ provider: 'google', callbackURL: '/chat' });
 
-export { accountInfo, signIn, signUp, signOut, googleLogin, useSession };
+const { signIn , useSession, signOut } = createAuthClient();
+
+const signInGoogle = async () => {
+     return await signIn.social({
+        provider: "google"
+    })
+}
+
+const logout = async ():Promise<boolean> => {
+    const result =  await signOut();
+    return result.data ? result.data.success : false
+}
+
+export {
+    signInGoogle,
+    useSession,
+    logout
+}
